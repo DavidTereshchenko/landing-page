@@ -1,0 +1,446 @@
+/* Підключення шрифтів */
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:regular,900); 
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    min-width: 20rem;
+    line-height: 1;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+    display: inline;
+}
+img {
+    vertical-align: top;
+}
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+button {
+    line-height: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    color: inherit;
+    background-color: transparent;
+}
+
+/*-------------------------------------------------------------------*/
+
+/* Стилі за замовченням */
+body {
+    font-family: "Rubik";
+    font-size: 0.875rem;
+    color: #646D70;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Налаштування адаптиву */
+[class*="__container"] { 
+    max-width: 52.5rem; /* Обмежуючий + відступи */
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    margin: 0 auto;
+}
+
+/* Модулі */
+.title {
+    font-family: Merriweather;
+    color: #fff;
+    font-size: 1.875rem;
+    line-height: 130%;
+}
+.title--dark {
+    color: #222f33;
+}
+/* Загальні стилі */
+.page {
+    flex: 1 1 auto;
+}
+.page__main {
+}
+.page__materials {
+}
+
+/* Основні стилі */
+
+/* Header */
+.header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 50;
+}
+.header__container {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    min-height: 6.5625rem;
+}
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.header__logo img {
+    width: 135px;
+}
+.header__body {
+    display: flex;
+    align-items: center;
+    column-gap: 2.6875rem;
+}
+.header__button {
+    padding: 0.625rem 1.3125rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    transition: all 0.5s;
+}
+.header__button:hover {
+    background-color: #333;
+    color: #fff;
+}
+.menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 2.5rem;
+    row-gap: 0.5rem;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+.menu__link:hover {
+    text-decoration: underline;
+}
+@media (max-width: 39.0625rem) {
+    .header__container {
+        min-height: 100px;
+    }
+    .header__logo {
+        flex: 0 0 2.0625rem;
+    }
+    .header__body {
+        column-gap: 1.25rem;
+    }
+    .header__button {
+        padding: 0.625rem 0.9375rem;
+    }
+    .menu__list {
+        column-gap: 1.25rem;
+        font-size: 14px;
+    }
+}
+
+/* Main Section */
+.main-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+}
+.main-section__container {
+    padding-top: 5.625rem;
+    padding-bottom: 1.875rem;
+    position: relative;
+    z-index: 2;
+    gap: 1.25rem;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 54.32% 1fr;
+    align-items: center;
+}
+@media (max-width: 43.75rem) {
+    .main-section__container {
+        grid-template-columns: auto;
+        align-content: center;
+    }
+}
+@media (min-width: 43.75rem) {
+    .main-section__video-link {
+        justify-self: center;
+    }
+}
+
+.main-section__content {
+    flex: 0 0 54.32%; /* 440/810 */
+}
+.main-section__label {
+    font-size: 1rem;
+    font-weight: 31.25rem;
+    color: #fff;
+}
+.main-section__label:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+.main-section__video-link {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #fff;
+}
+.main-section__video-link::before {
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 2rem;
+    border-radius: 50%;
+    background: url('../img/main/Play.svg') left 0 no-repeat ;
+
+}
+.main-section__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+}
+.main-section__image img { 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+@media (max-width: 43.75rem) {
+    .main-section__image img {
+        opacity: 0.6;
+    }
+}
+
+/* Section Materials */
+
+.swiper {
+    overflow: hidden;
+}
+.swiper-wrapper { 
+    display: flex;
+    box-sizing: content-box;
+}
+.swiper-initialized {
+    touch-action: pan-y;
+}
+.swiper-slide {
+    flex-shrink: 0;
+}
+
+.materials {
+}
+.materials__container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.25rem;
+    margin: 0 auto;
+}
+.materials__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.875rem;
+}
+.materials__title {
+
+}
+.materials__text {
+    margin-top: 0.8125rem;
+    line-height: 190%;
+}
+.materials__more {
+    margin-top: 1.4375rem;
+    width: 5.625rem;
+    height: 1.875rem;
+    padding: 10px 15px 20px 15px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid var(--greys-light-grey, #646D70);
+    margin-bottom: 3.875rem;
+}
+.materials__slider {
+    position: relative;
+    max-width: 20.3125rem;
+    justify-self: end;
+    top: -12%;
+}
+.slider-materials {
+    z-index: 1;
+
+}
+.slider-materials__wrapper {
+
+}
+.slider-materials__slide {
+    aspect-ratio: 325 / 366;
+    position: relative;
+}
+.slider-materials__slide img { 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.slider-materials__pagination {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.slider-materials__pagination-bullet .swiper-pagination-bullet {
+    flex: 0 0 0.5rem;
+    height: 0.5rem;
+    background-color: #fff;
+    opacity: 0.4;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opasitiv 0.3s;
+}
+.slider-materials__pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+/* Section innovatie */
+
+.page__innovatie {
+    width: 100%;
+    display: flex;
+    background-color: #222F33;
+    position: relative;
+    justify-content: end;
+}
+
+.innovatie__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin-top: 78px;
+}
+
+.innovatie__container h1 {
+    font-size: 1.875rem;
+    font-family: Merriweather;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.innovatie__text {
+    display: flex;
+    gap: 43px;
+    color: #A0A0A0;
+}
+
+.innovatie__text p {
+    line-height: 190%;
+    margin-bottom: 78px;
+}
+
+.innovatie__design {
+    display: flex;
+    align-items: end;
+    position: absolute;
+    background-color: #222F33;
+    min-width: 484px;
+    height: 200px;
+    top: -50%;
+}
+
+.house__container {
+    display: flex;
+    margin-top: 89px;
+    gap: 75px;
+    margin-bottom: 85px;
+}
+
+.house-information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+    row-gap: 37px;
+}
+
+.information__item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.information__item span {
+    font-size: 18px;
+    font-family: Merriweather;
+    font-weight: 900;
+    color: var(--Color-Dark-green, #222F33);
+}
+
+.information__item p {
+    font-size: 12px;
+    font-weight: 300;
+    font-family: Rubik;
+    color: var(--Greys-Light-grey, #646D70);
+    font-feature-settings: 'clig' off, 'liga' off;
+    line-height: 183.333%;
+    opacity: 0.7;
+}
+
+.footer {
+    background-color: #222F33;
+}
+
+.footer__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #A0A0A0;
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 41px;
+    margin-bottom: 37px;
+}
+
+.privacy {
+    display: flex;
+    gap: 25px;
+}
