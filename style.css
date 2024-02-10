@@ -223,7 +223,7 @@ body {
     height: 2rem;
     flex: 0 0 2rem;
     border-radius: 50%;
-    background: url('../img/main/Play.svg') left 0 no-repeat ;
+    background: url('img/main/Play.svg') left 0 no-repeat ;
 
 }
 .main-section__image {
