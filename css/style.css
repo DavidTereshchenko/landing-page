@@ -99,6 +99,8 @@ body {
     left: 0;
     top: 0;
     z-index: 50;
+    background-color: #222F33;
+    opacity: 0.7;
 }
 .header__container {
     display: flex;
@@ -107,7 +109,7 @@ body {
     align-items: center;
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
-    min-height: 6.5625rem;
+    min-height: 5.5625rem;
 }
 .header__logo {
     display: flex;
@@ -142,7 +144,7 @@ body {
     column-gap: 2.5rem;
     row-gap: 0.5rem;
     color: #fff;
-    font-size: 0.75rem;
+    font-size: 14px;
     font-weight: 500;
 }
 .menu__link:hover {
@@ -342,6 +344,20 @@ body {
     opacity: 1;
 }
 
+@media (max-width: 700px) {
+    .materials__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .materials__slider {
+        position: relative;
+        top: 0;
+        margin-bottom: 50px;
+    }
+}
+
 /* Section innovatie */
 
 .page__innovatie {
@@ -388,6 +404,39 @@ body {
     top: -50%;
 }
 
+@media (max-width: 950px) {
+    .innovatie__design {
+        min-width: 334px;
+    }
+}
+
+@media (max-width: 700px) {
+    .innovatie__design {
+        display: none;
+    }
+
+    .innovatie__container h1 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .innovatie__text {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 60px;
+    }
+
+    .innovatie__text p {
+        margin: 0;
+    }
+}
+
+
+
+/* House screen */
+
 .house__container {
     display: flex;
     margin-top: 89px;
@@ -406,6 +455,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    transition: all .3s ease;
+}
+
+.information__item:hover {
+    border: 1px solid #222F33;
+    border-radius: 5px;
+    padding: 10px;
+    transform: rotate3d(10, 0, 0, 15deg);
 }
 
 .information__item span {
@@ -425,6 +482,16 @@ body {
     opacity: 0.7;
 }
 
+@media (max-width: 700px) {
+    .house__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Footer */
+
 .footer {
     background-color: #222F33;
 }
@@ -438,9 +505,19 @@ body {
     font-weight: 300;
     margin-top: 41px;
     margin-bottom: 37px;
+    flex-wrap: wrap;
 }
 
 .privacy {
     display: flex;
     gap: 25px;
+}
+
+.privacy p {
+    cursor: pointer;
+}
+
+.privacy p:hover {
+    color: #fff;
+    text-decoration: underline;
 }
